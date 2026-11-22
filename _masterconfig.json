@@ -1,0 +1,223 @@
+{
+  "system": {
+    "TEMPDIR": "$env:TEMP\\_ml_temp",
+    "LOGDIR": "$env:TEMP\\_ml_logs",
+    "LOGFILE_RETENTION": "30d",
+    "LOGLEVEL_FILE": "trace",
+    "LOGLEVEL_GUI": "trace",
+    "CREDENTAL_DIR": "C:\\2_Data\\C_Config\\credentials",
+    "CREDENTAL_VAULTNAME": "ml_secret_fault",
+    "LOGFILE_PREFIX": "ml_basefunc",
+    "LOGFILE_ROTATENO": 3,
+    "LOGFILE_ROTATESIZE": 100000,
+    "SERVER_ENVIRONMENT_HOME": "fritz.box",
+    "SERVER_ENVIRONMENT_OFFICE": "europe.bmw.corp",
+    "CLIENT_CONFIG": {
+      "BMWLAPTOP_OFFICE": {
+        "HOSTNAME": "LMUC990694",
+        "DRIVES": [
+          {
+            "drive": "X",
+            "type": "nfs",
+            "root": "\\\\EUROPE.BMW.CORP\\WINFS\\FG-Data\\FG-2___Data_Platforms\\FG-21\\03_Domain\\90_Products\\FG-212_Enterprise_Data\\Beauftragungen_FactsTool"
+          },
+          {
+            "drive": "R",
+            "type": "unmap"
+          }
+        ]
+      },
+      "BMWLAPTOP_HOME": {
+        "HOSTNAME": "LMUC990694",
+        "DRIVES": [
+          {
+            "drive": "R",
+            "type": "nfs",
+            "root": "\\\\raspi6.fritz.muc\\usbdisk"
+          },
+          {
+            "drive": "X",
+            "type": "nfs"
+          },
+          {
+            "drive": "Y",
+            "type": "nfs"
+          }
+        ]
+      },
+      "NUC": {
+        "HOSTNAME": "nuc",
+        "DRIVES": [
+          {
+            "drive": "R",
+            "type": "nfs"
+          },
+          {
+            "drive": "X",
+            "type": "nfs"
+          },
+          {
+            "drive": "Y",
+            "type": "nfs"
+          }
+        ]
+      },
+      "PRIVATLAPTOP": {
+        "HOSTNAME": "LMUC990694",
+        "DRIVES": [
+          {
+            "drive": "R",
+            "type": "nfs"
+          },
+          {
+            "drive": "X",
+            "type": "nfs"
+          },
+          {
+            "drive": "Y",
+            "type": "nfs"
+          }
+        ]
+      }
+    },
+    "TEST_1": {
+      "name": "Doe",
+      "age": 22
+    },
+    "TEST_2": [
+      {
+        "name": "John",
+        "age": 30
+      },
+      {
+        "name": "Jane",
+        "age": 25
+      },
+      {
+        "name": "Doe",
+        "age": 22
+      }
+    ]
+  },
+  "giro": {
+    "tables": [
+      {
+        "source": "umsatz",
+        "destination": "h_umsatz"
+      },
+      {
+        "source": "umsatztyp",
+        "destination": "h_umsatztyp"
+      },
+      {
+        "source": "konto",
+        "destination": "h_konto"
+      }
+    ]
+  },
+  "mlgui": {
+    "service_controls": ["syncthing", "jameica", "mariadb", "doublecmd", "outlook", "teams", "edge", "jabradirect"],
+    "process": [
+      { "display_name": "Template Project", "command": "c:\\1_Work\\S_scripts\\_templateproj_py\\__runall.cmd" },
+      { "display_name": "Songbook", "command": "c:\\1_Work\\S_scripts\\songbook\\__runall.cmd" }
+    ],
+    "refresh_seconds": {
+      "system": 30,
+      "status": 30
+    },
+    "status_refresh_boost": {
+      "seconds": 3,
+      "duration_seconds": 20
+    }
+  },
+  "services": {
+    "mlservice": {
+      "supported_services": [
+        { "key": "syncthing", "display_name": "SyncThing" },
+        { "key": "mariadb", "display_name": "MariaDB Server" },
+        { "key": "jabradirect", "display_name": "Jabra Direct" },
+        { "key": "outlook", "display_name": "Outlook (new)" },
+        { "key": "teams", "display_name": "MS Teams" },
+        { "key": "rustdesk", "display_name": "Rustdesk" },
+        { "key": "edge", "display_name": "MS Edge" },
+        { "key": "jameica", "display_name": "Jameica Banking", "dependency": "mariadb" },
+        { "key": "doublecmd", "display_name": "DoubleCommander" }
+      ],
+      "logging": {
+        "dir": "%TEMP%\\_ml_logs",
+        "file_pattern": "mlservice-<YYYY-MM-DD>.log"
+      }
+    }
+  },
+  "songbook": {
+    "TARGET_DB": "c:\\1_Work\\D_Database\\songbook.sqlite",
+    "EXCEL_FILE": "c:\\1_Work\\M_Musik\\Songbook.xlsx",
+    "GLOBALSTATE_XML": "C:\\5_Downsync\\ipad13_camelotconfig\\GlobalState.xml",
+    "SOURCES_DB": [
+      [
+        "Live",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_Live\\SongBookMidi.sqlite"
+      ],
+      [
+        "AtHome",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_AtHome\\SongBookMidi.sqlite"
+      ],
+      [
+        "LieblFamily",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_LieblFamily\\SongBookMidi.sqlite"
+      ],
+      [
+        "Akkordeon",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_Akkordeon\\SongBookMidi.sqlite"
+      ],
+      [
+        "SwingingG",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_SwingingG\\SongBookMidi.sqlite"
+      ]
+    ],
+    "SOURCES_SETTINGS": [
+      [
+        "Live",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_Live\\SongBookMidi.settings"
+      ],
+      [
+        "AtHome",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_AtHome\\SongBookMidi.settings"
+      ],
+      [
+        "LieblFamily",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_LieblFamily\\SongBookMidi.settings"
+      ],
+      [
+        "Akkordeon",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_Akkordeon\\SongBookMidi.settings"
+      ],
+      [
+        "SwingingG",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_SwingingG\\SongBookMidi.settings"
+      ]
+    ],
+    "SCAN_DIRS": [
+      [
+        "Live",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_Live"
+      ],
+      [
+        "AtHome",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_AtHome"
+      ],
+      [
+        "LieblFamily",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_LieblFamily"
+      ],
+      [
+        "Akkordeon",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_Akkordeon"
+      ],
+      [
+        "SwingingG",
+        "C:\\5_Downsync\\ipad_songbook\\SBDATA_SwingingG"
+      ]
+    ]
+  }
+}
